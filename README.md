@@ -46,6 +46,10 @@ All test are passing. To run them:
 npm run test
 ```
 
+To work on the code:
+```sh
+npm run dev
+```
 
 
 
