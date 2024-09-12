@@ -15,7 +15,15 @@ main {
 	height: 100vh;
 }
 
+main.centered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .controls {
+	display: flex;
+	position: absolute;
 	top: 2rem;
 	left: 2rem;
 }
@@ -38,7 +46,7 @@ main {
 	width: 3rem;
 }
 
-.count_button {
+.count-button {
 	width: 10rem;
 	height: 10rem;
 	background: yellow;
@@ -47,13 +55,26 @@ main {
 	box-shadow: 1px 1px 4px 2px #557668;
 }
 
-.count_button:active {
+.count-button:active {
 	box-shadow: none ;
 	box-shadow: 1px 1px 1px 1px #557668;
 }
 
-.count_button .current_count {
+.count-button .current-count {
 	font-size: 2rem;
 	font-weight: bold;
 	color: darkgreen;
+}
+
+/* To show content only for screen readers */
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	border: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
 }

@@ -7,22 +7,22 @@
       <title>Centered counter</title>
     </head>
   <body>
-      <main>
+      <main class="centered">
         <div class="controls">
           <div class="control">
-            <label for="start_at">Start at</label>
-            <input name="start_at" value="0" id="start_at"/>
+            <label for="start-at">Start at</label>
+            <input type="number" name="start-at" value="0" min="0" id="start-at" aria-describedby="start-at-desc">
+            <p id="start-at-desc" class="visually-hidden">Enter the starting value for the counter</p>
           </div>
         <div class="control">
           <label for="step">Step</label>
-          <input name="step" value="1" id="step"/>
+          <input type="number" name="step" value="1" min="1" id="step" aria-describedby="step-desc">
+          <p id="step-desc" class="visually-hidden">Enter the step increment value for each counter increase</p>
         </div>
         </div>
       </div>
-      <button class="count_button">
-        <span class="current_count">
-          0
-        </span>
+      <button id="count-button" class="count-button" aria-label="Increase the counter by the specified step" aria-live="polite">
+        <span class="current-count" aria-live="polite">0</span>
       </button>
     </main>
     <script type="module" src="/src/main.ts"></script>

@@ -1,27 +1,28 @@
-import { factory } from "./factory";
+import { factory, CalculateFunction } from './utils/factory';
 
-let count = factory(0, 1);
+let count: CalculateFunction = factory(0, 1);
 
-function update_count_and_reset_counter() {}
+// Selected DOM elements for further manipulations
+const startAtInput = document.getElementById('start-at') as HTMLInputElement;
+const stepInput = document.getElementById('step') as HTMLInputElement;
+const currentCount = document.querySelector('.current-count') as HTMLSpanElement;
+const countButton = document.querySelector('.count-button') as HTMLButtonElement;
 
-const start_at_control = document.getElementById(
-  "start_at",
-) as HTMLInputElement;
+// Gets values from elements and updates count function with new function with updated values from factory
+function update_count_and_reset_counter(): void {
+  const startAt = Number(startAtInput.value);
+  const step = Number(stepInput.value);
 
-const step_control = document.getElementById("step") as HTMLInputElement;
+  count = factory(startAt, step);
+}
 
-start_at_control?.addEventListener("change", () => {});
+// Calculate and update new current_count value
+function update_count(): void {
+  const updatedCount = count().toString();
+  currentCount.innerText = updatedCount;
+}
 
-step_control?.addEventListener("change", () => {});
-
-const count_button = document.querySelector(
-  ".count_button",
-) as HTMLButtonElement;
-
-const current_count = document.querySelector(
-  ".current_count",
-) as HTMLSpanElement;
-
-function update_count() {}
-
-count_button.addEventListener("click", update_count);
+// Event listeners
+startAtInput?.addEventListener('change', update_count_and_reset_counter);
+stepInput?.addEventListener('change', update_count_and_reset_counter);
+countButton.addEventListener('click', update_count);

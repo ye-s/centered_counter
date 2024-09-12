@@ -1,5 +1,16 @@
 # Vanilla JS + CSS programming problem
 
+## UPD
+ # Added features
+ 1. Added accessibility in HTML.
+ 2. Linter using ESLint with TypeScript support, run `npm run lint` to check for errors.
+ 3. Formatter using Prettier, run `npm run format`.
+ 4. Adde stylelinter, run `npm run lint:styles`.
+ 5. Updated "snake_case" in .ts files to "camelCase", and in .css file to "kebab-case".
+ 6. Moved out factory code to utils folder.
+ 7. Add UI tests via Playwright, run `npm run pwtest`.
+ 8. Added more unit tests to cover more edge cases.
+
 ## Requisites
 
 node
